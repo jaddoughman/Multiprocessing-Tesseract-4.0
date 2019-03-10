@@ -1,0 +1,6 @@
+tesseract 95011411.tif 95011411 -l ara
+
+Tesseract Open Source OCR Engine v4.0.0 with Leptonica
+Page 1
+Detected 2564 diacritics
+
