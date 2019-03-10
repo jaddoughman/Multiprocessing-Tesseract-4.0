@@ -6,8 +6,7 @@ Performing OCR by running parallel instances of Tesseract 4.0.
 Steps: 
    1) Install Tesseract 4.0 from package manager [brew install tesseract-ocr]]
    2) Add tessdata of your desired language to tessdata directory
-   2) Import your input images to 0001w1 directory
-   3) Optional: change num_of_worker_threads = the number of cores of your machine
-   4) Optional: change "tesseract_path" to None [IF Tesseract is already installed]
+   3) Import your input images to "input" directory
+   4) Optional: change num_of_worker_threads = the number of cores of your machine
    5) Run main.py [python3 main.py]
    
