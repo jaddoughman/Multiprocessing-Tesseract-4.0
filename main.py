@@ -4,9 +4,9 @@ from pathlib import Path
 from tesseract import TesseractOCRJob
 from manager import JobQueueManager
 
-IMAGE_ROOT_DIR = "0001w1"
+IMAGE_ROOT_DIR = "input"
 LANGUAGES = ["ara"]
-TESSERACT_OUTPUT_ROOT_DIR = "out"
+TESSERACT_OUTPUT_ROOT_DIR = "output"
 TESSERACT_STATUS_ROOT_DIR = "status"
 
 os.environ["TESSDATA_PREFIX"] = str(Path("tessdata").absolute())
@@ -17,7 +17,9 @@ job_types = [
 ]
 
 tool_paths = {
-    "tesseract_path": str(Path("tesseract-bin/bin/tesseract"))
+    ######## PATH TO TESSERACT IF BUILT FROM SOURCE ##########
+    # "tesseract_path": str(Path("tesseract-bin/bin/tesseract"))
+    "tesseract_path": None
 }
 
 def save_tesseract_output(job_queue_idx, return_code, stdout, stderr, duration):
@@ -34,7 +36,10 @@ output_filepaths_absolute = [Path(TESSERACT_OUTPUT_ROOT_DIR, image_filepath.stem
 num_of_images = len(image_filepaths)
 jobs = [TesseractOCRJob(image_filepaths_absolute[i], output_filepaths_absolute[i], LANGUAGES) for i in range(num_of_images)]
 
+######### NUMBER OF WORKERS = NUMBER OF CORES ################
 num_of_worker_threads = multiprocessing.cpu_count()
+##############################################################
+
 jq_manager = JobQueueManager(num_of_worker_threads=num_of_worker_threads)
 jq_manager.register_job_types(job_types, tool_paths)
 job_queue_indices = [None] * len(jobs)
