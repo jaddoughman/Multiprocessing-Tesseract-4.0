@@ -8,5 +8,6 @@ Steps:
    2) Add tessdata of your desired language to tessdata directory
    2) Import your input images to 0001w1 directory
    3) Optional: change num_of_worker_threads = the number of cores of your machine
+   4) Optional: change "tesseract_path" to None [IF Tesseract is already installed]
    5) Run main.py [python3 main.py]
    
