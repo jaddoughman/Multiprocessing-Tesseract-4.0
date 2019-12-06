@@ -1,5 +1,5 @@
 # Multi-Processing Tesseract 4.0
-In an effort to decrease the execution time of the OCR process, a multi-processing script was created using Python's multi-processing module. The script spawns several worker threads, each constantly processing Tesseract 4.0 OCR jobs. 
+In an effort to decrease the execution time of the OCR process, a multi-processing script was created using Python's multi-processing module. The script spawns several worker threads, each constantly processing the Tesseract 4.0 OCR jobs appeneded to the job queue by the JobQueueManager. 
 
 ## Brief history
 
