@@ -28,7 +28,7 @@ Other compilers might work, but are not officially supported.
 
 ## Usage
 
-* Install [Tesseract 4.0](https://github.com/jaddoughman/tesseract)
+* Install [Tesseract 4.0](https://github.com/tesseract-ocr/)
 * Add tessdata of your desired language to the *tessdata* directory
 * Import your input images to the *input* directory
 * Run main.py [python3 main.py]
